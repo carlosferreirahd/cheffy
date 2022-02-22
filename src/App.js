@@ -1,6 +1,8 @@
+import { Root } from "./screens/Root";
+
 function App() {
   return (
-    <div>cheffy</div>
+    <Root />
   );
 }
 
