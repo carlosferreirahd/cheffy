@@ -1,0 +1,14 @@
+@import "../../styles/colors";
+
+.side-menu__container {
+  width: 256px;
+}
+
+.side-menu__sider-wrapper {
+  background: $thirdColor;
+}
+
+.side-menu__menu-wrapper {
+  height: 100%;
+  border-right: 0;
+}
