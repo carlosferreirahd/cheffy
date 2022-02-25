@@ -1,4 +1,4 @@
-import { Root } from "./screens/Root";
+import { Root } from "./screens/Root/Root";
 
 function App() {
   return (

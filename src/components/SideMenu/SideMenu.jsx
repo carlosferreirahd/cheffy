@@ -1,6 +1,9 @@
 import React from "react";
-import { PieChartOutlined } from "@ant-design/icons";
 import { Menu, Layout } from "antd";
+import { FaPizzaSlice } from 'react-icons/fa';
+import { BsCupStraw } from 'react-icons/bs';
+
+import './SideMenu.scss'
 
 export function SideMenu({
   visible = false,
@@ -12,18 +15,21 @@ export function SideMenu({
   return (
     <div className="side-menu__container">
       <Sider
-        className="side-menu__sider-wrapper"
         width={200}
         collapsed={visible}
       >
         <Menu
-          className="side-menu__menu-wrapper"
+          className="side-menu__menu"
           defaultSelectedKeys={['1']}
           mode="inline"
           theme="light"
         >
-          <Item key="1" icon={<PieChartOutlined />}>
-            Option 1
+          <Item key="1" icon={<FaPizzaSlice />}>
+            Pizzas
+          </Item>
+
+          <Item key="2" icon={<BsCupStraw />}>
+            Bebidas
           </Item>
         </Menu>
       </Sider>
