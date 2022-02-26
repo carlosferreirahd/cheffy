@@ -1,0 +1,22 @@
+.card__skeleton-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  .ant-skeleton-title {
+    width: 100% !important;
+  }
+
+  .ant-skeleton-paragraph {
+    li {
+      width: 100% !important;
+    }
+  }
+}
+
+.card__cover-image {
+  height: 250px;
+  object-fit: cover;
+}

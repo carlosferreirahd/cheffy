@@ -4,6 +4,7 @@ import { FaPizzaSlice } from 'react-icons/fa';
 import { BsCupStraw } from 'react-icons/bs';
 
 import './SideMenu.scss'
+import { Link } from "react-router-dom";
 
 export function SideMenu({
   visible = false,
@@ -25,11 +26,15 @@ export function SideMenu({
           theme="light"
         >
           <Item key="1" icon={<FaPizzaSlice />}>
-            Pizzas
+            <Link to="/pizzas">
+              Pizzas
+            </Link>
           </Item>
 
           <Item key="2" icon={<BsCupStraw />}>
-            Bebidas
+            <Link to="bebidas">
+              Bebidas
+            </Link>
           </Item>
         </Menu>
       </Sider>
