@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Layout } from 'antd';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Header } from '../../components/Header/Header';
 import { SideMenu } from '../../components/SideMenu/SideMenu';
 import { ContentContainer } from '../../components/ContentContainer/ContentContainer';
+import { Routes } from '../Routes/Routes';
 
 import './Root.scss'
-import { Routes } from '../Routes/Routes';
-import { Router } from 'react-router-dom';
 
 export function Root() {
 
@@ -24,7 +24,7 @@ export function Root() {
           <Layout>
             <SideMenu visible={isMenuCollapsed} />
             <ContentContainer>
-
+              <Routes />
             </ContentContainer>
           </Layout>
         </Layout>
@@ -34,7 +34,9 @@ export function Root() {
 
   return (
     <div className="root__root">
-      {renderContent()}
+      <Router>
+        {renderContent()}
+      </Router>
     </div>
   );
 }
