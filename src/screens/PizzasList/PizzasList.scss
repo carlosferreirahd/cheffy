@@ -1,13 +1,13 @@
 .pizzas-list__container {
   display: flex;
+  width: 100%;
 
   .pizzas-list__content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 3em;
-    grid-row-gap: 3em;
-
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
     padding: 50px;
-    width: 100%;
   }
 }
