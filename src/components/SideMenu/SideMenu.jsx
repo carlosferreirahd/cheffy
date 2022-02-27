@@ -18,6 +18,15 @@ export function SideMenu({
       <Sider
         width={200}
         collapsed={visible}
+        style={{
+          overflow: 'auto',
+          paddingTop: 65,
+          height: '100vh',
+          position: 'fixed',
+          left: 0,
+          top: 0,
+          bottom: 0,
+        }}
       >
         <Menu
           className="side-menu__menu"

@@ -16,14 +16,14 @@ export function Root() {
   function renderContent() {
     return (
       <div className="root__content">
-        <Layout>
-          <Header
-            isMenuCollapsed={isMenuCollapsed}
-            handleMenuClick={setIsMenuCollapsed}
-          />
-          <Layout>
-            <SideMenu visible={isMenuCollapsed} />
-            <ContentContainer>
+        <Layout hasSider>
+          <SideMenu visible={isMenuCollapsed} />
+          <Layout className="site-layout" style={{ marginLeft: -2 }}>
+            <Header
+              isMenuCollapsed={isMenuCollapsed}
+              handleMenuClick={setIsMenuCollapsed}
+            />
+            <ContentContainer isMenuCollapsed={isMenuCollapsed}>
               <Routes />
             </ContentContainer>
           </Layout>

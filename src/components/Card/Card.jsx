@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Card as ContentCard, Skeleton } from 'antd';
 
 import { ServicePizzas } from '../../services/pizzas';
@@ -13,7 +13,7 @@ export function Card({
   const [imageSrc, setImageSrc] = useState('');
 
   const N_DECIMALS = 2;
-  const RANDOM_PRICE = (Math.random() * (45.75 - 21.35) + 21.35).toFixed(N_DECIMALS);
+  const RANDOM_PRICE = useMemo(() => (Math.random() * (45.75 - 21.35) + 21.35).toFixed(N_DECIMALS), []);
 
   useEffect(() => {
     setIsLoading(true);
