@@ -1,5 +1,5 @@
 import React from "react";
-import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 import { Tooltip, Layout } from "antd";
 
 import './Header.scss';
@@ -22,7 +22,6 @@ export function Header({
         </Tooltip>
         <span id="pizzeria-name">CHEFFY</span>
       </div>
-      <SearchOutlined />
     </AntdHeader>
   );
 }

@@ -1,0 +1,12 @@
+.burgers-list__container {
+  display: flex;
+  width: 100%;
+
+  .burgers-list__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+}

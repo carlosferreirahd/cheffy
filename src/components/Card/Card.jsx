@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Card as ContentCard, Skeleton } from 'antd';
 
-import { ServicePizzas } from '../../services/pizzas';
+import { ServiceFoods } from '../../services/foods';
 
 import './Card.scss';
 
 export function Card({
+  foodType = 'pizza',
   ...props
 }) {
 
@@ -18,12 +19,11 @@ export function Card({
   useEffect(() => {
     setIsLoading(true);
 
-    ServicePizzas.getRandomPizza()
+    ServiceFoods.getRandomFood(foodType)
       .then((res) => setImageSrc(res.data.image))
-      .catch((err) => console.log('error while loading pizza image', err))
+      .catch((err) => console.log(`error while loading ${foodType} image`, err))
       .finally(() => setIsLoading(false));
-
-  }, []);
+  }, [foodType]);
 
   function renderCardSkeleton() {
     return (
@@ -41,11 +41,11 @@ export function Card({
   return (
     <ContentCard
       style={{ width: '300px' }}
-      cover={isLoading ? undefined : <img className="card__cover-image" alt="Random Pizza" src={imageSrc} />}
+      cover={isLoading ? undefined : <img className="card__cover-image" alt="Random Food" src={imageSrc} />}
       hoverable
       {...props}
     >
-      {isLoading ? renderCardSkeleton() : <ContentCard.Meta title="Very nice pizza 😋" description={`Price: R$${RANDOM_PRICE}`} />}
+      {isLoading ? renderCardSkeleton() : <ContentCard.Meta title={`Very nice ${foodType} 😋`} description={`Price: R$${RANDOM_PRICE}`} />}
     </ContentCard>
   );
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import { Menu, Layout } from "antd";
-import { FaPizzaSlice } from 'react-icons/fa';
-import { BsCupStraw } from 'react-icons/bs';
+import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
+
+import { Link } from "react-router-dom";
 
 import './SideMenu.scss'
-import { Link } from "react-router-dom";
 
 export function SideMenu({
   visible = false,
@@ -40,9 +40,9 @@ export function SideMenu({
             </Link>
           </Item>
 
-          <Item key="2" icon={<BsCupStraw />}>
-            <Link to="bebidas">
-              Bebidas
+          <Item key="2" icon={<FaHamburger />}>
+            <Link to="sanduiches">
+              Sanduíches
             </Link>
           </Item>
         </Menu>

@@ -10,7 +10,7 @@ export function PizzasList() {
   return (
     <div className="pizzas-list__container">
       <div className="pizzas-list__content">
-        {[...Array(CARDS_COUNT)].map((e, i) => <Card key={i} />)}
+        {[...Array(CARDS_COUNT)].map((e, i) => <Card key={i} foodType="pizza" />)}
       </div>
     </div>
   );
