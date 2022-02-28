@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Card as ContentCard, Skeleton } from 'antd';
+import { Button, Card as ContentCard, Skeleton } from 'antd';
+import { CgShoppingCart } from 'react-icons/cg'
 
 import { ServiceFoods } from '../../services/foods';
 
@@ -38,14 +39,29 @@ export function Card({
     );
   }
 
+  function renderCardDescription() {
+    return (
+      <div className="card__description-container">
+        <p>Price: R${RANDOM_PRICE}</p>
+        <Button
+          className="card_description-button"
+          type="primary"
+          icon={<CgShoppingCart />}
+        >
+          Adicionar ao carrinho
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <ContentCard
-      style={{ width: '300px' }}
+      style={{ width: '300px', transition: '2s' }}
       cover={isLoading ? undefined : <img className="card__cover-image" alt="Random Food" src={imageSrc} />}
       hoverable
       {...props}
     >
-      {isLoading ? renderCardSkeleton() : <ContentCard.Meta title={`Very nice ${foodType} 😋`} description={`Price: R$${RANDOM_PRICE}`} />}
+      {isLoading ? renderCardSkeleton() : <ContentCard.Meta title={`Very nice ${foodType} 😋`} description={renderCardDescription()} />}
     </ContentCard>
   );
 }
