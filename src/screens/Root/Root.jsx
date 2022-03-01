@@ -8,6 +8,7 @@ import { ContentContainer } from '../../components/ContentContainer/ContentConta
 import { Routes } from '../Routes/Routes';
 
 import './Root.scss'
+import { CartContextProvider } from '../../utils/CartContext';
 
 export function Root() {
 
@@ -34,9 +35,11 @@ export function Root() {
 
   return (
     <div className="root__root">
-      <Router>
-        {renderContent()}
-      </Router>
+      <CartContextProvider>
+        <Router>
+          {renderContent()}
+        </Router>
+      </CartContextProvider>
     </div>
   );
 }
