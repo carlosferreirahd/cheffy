@@ -1,0 +1,13 @@
+.cart-list__container {
+  width: 100%;
+  height: 100vh;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+.cart-list__product-name {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+}
