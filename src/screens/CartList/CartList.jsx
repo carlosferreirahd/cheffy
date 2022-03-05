@@ -165,6 +165,17 @@ export function CartList() {
 
   return (
     <div className="cart-list__container">
+      {!isEmpty && (
+        <div className="cart-list__final-price-container">
+          <Paragraph>
+            <blockquote>
+              <Title level={3}>
+                Preço final: R${getFinalPrice()}
+              </Title>
+            </blockquote>
+          </Paragraph>
+        </div>
+      )}
       <Table
         dataSource={dataSource}
         columns={columns}
@@ -178,17 +189,6 @@ export function CartList() {
           )
         }}
       />
-      {!isEmpty && (
-        <div className="cart-list__final-price-container">
-          <Paragraph>
-            <blockquote>
-              <Title level={3}>
-                Preço final: R${getFinalPrice()}
-              </Title>
-            </blockquote>
-          </Paragraph>
-        </div>
-      )}
     </div>
   );
 }
