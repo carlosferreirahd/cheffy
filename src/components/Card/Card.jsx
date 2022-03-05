@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
-import { Button, Card as ContentCard, Skeleton } from 'antd';
+import { Button, Card as ContentCard, notification, Skeleton } from 'antd';
 import { CgShoppingCart } from 'react-icons/cg'
 
 import { ServiceFoods } from '../../services/foods';
@@ -49,6 +49,7 @@ export function Card({
     const foodObj = {
       imageSrc: imageSrc,
       price: RANDOM_PRICE,
+      type: foodType,
     }
 
     if (foodType === 'pizza') {
@@ -64,12 +65,18 @@ export function Card({
     }
 
     setIsButtonLoading(false);
+
+    notification.success({
+      message: 'Sucesso',
+      description: 'Item adicionado no seu carrinho!',
+      duration: 2,
+    });
   }
 
   function renderCardDescription() {
     return (
       <div className="card__description-container">
-        <p>Price: R${RANDOM_PRICE}</p>
+        <p>Preço: R${RANDOM_PRICE}</p>
         <Button
           className="card_description-button"
           type="primary"
@@ -83,6 +90,8 @@ export function Card({
     );
   }
 
+  const metaTitle = foodType === 'pizza' ? 'Pizza muito boa 😋' : 'Sanduíche muito bom 😋';
+
   return (
     <ContentCard
       style={{ width: '300px' }}
@@ -90,7 +99,7 @@ export function Card({
       hoverable
       {...props}
     >
-      {isLoading ? renderCardSkeleton() : <ContentCard.Meta title={`Very nice ${foodType} 😋`} description={renderCardDescription()} />}
+      {isLoading ? renderCardSkeleton() : <ContentCard.Meta title={metaTitle} description={renderCardDescription()} />}
     </ContentCard>
   );
 }

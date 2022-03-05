@@ -20,7 +20,7 @@ export function Header({
         >
           <MenuOutlined onClick={() => handleMenuClick(isOpen => !isOpen)} />
         </Tooltip>
-        <span id="pizzeria-name">CHEFFY</span>
+        <span id="pizzeria-name">Cheffy</span>
       </div>
     </AntdHeader>
   );

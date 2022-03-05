@@ -11,3 +11,15 @@
   object-fit: cover;
   border-radius: 4px;
 }
+
+.cart-list__product-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 16px;
+}
+
+.cart-list__final-price-container {
+  width: 100%;
+  padding: 50px 30px;
+}
