@@ -4,12 +4,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import './styles/global.scss';
-import './styles/antd-override-theme.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );
 
